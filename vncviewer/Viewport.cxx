@@ -737,6 +737,9 @@ rdr::U32 Viewport::translateKeyEvent(int keyCode, int origKeyCode, const char *k
   case XK_Multi_key:
     // Same for this...
     return XK_Multi_key;
+  case XK_Zenkaku_Hankaku:
+    // pass through to control IM
+    return XK_Zenkaku_Hankaku;
   }
 
   // Unknown special key?
