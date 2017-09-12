@@ -422,6 +422,13 @@ int Viewport::handle(int event)
     } 
 
     handlePointerEvent(Point(Fl::event_x() - x(), Fl::event_y() - y()), buttonMask);
+
+    if (Fl::event_buttons() & FL_BUTTON8) {
+      handleKeyEvent(FL_Forward, FL_Forward, "", (event == FL_PUSH));
+    }
+    if (Fl::event_buttons() & FL_BUTTON9) {
+      handleKeyEvent(FL_Back, FL_Back, "", (event == FL_PUSH));
+    }
     return 1;
 
   case FL_FOCUS:
